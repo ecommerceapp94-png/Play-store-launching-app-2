@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="holoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7AF6FF"/>
+      <stop offset="35%" stop-color="#7B8CFF"/>
+      <stop offset="70%" stop-color="#C76BFF"/>
+      <stop offset="100%" stop-color="#FF6BB5"/>
+    </linearGradient>
+    <linearGradient id="xGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFEBA8"/>
+      <stop offset="55%" stop-color="#FFB36B"/>
+      <stop offset="100%" stop-color="#FF5E9E"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Foreground only — Android wraps adaptive icons in a circular/rounded mask
+       so we keep the M+X glyph in the center and let the OS draw the BG. -->
+  <g transform="translate(180 180) scale(0.65)">
+    <g filter="url(#softGlow)">
+      <path d="M 296 752
+               L 296 312
+               Q 296 280 326 280
+               L 384 280
+               Q 412 280 422 308
+               L 510 552
+               L 598 308
+               Q 608 280 636 280
+               L 694 280
+               Q 724 280 724 312
+               L 724 752
+               Q 724 776 700 776
+               L 660 776
+               Q 636 776 636 752
+               L 636 472
+               L 562 668
+               Q 552 690 528 690
+               L 492 690
+               Q 468 690 458 668
+               L 384 472
+               L 384 752
+               Q 384 776 360 776
+               L 320 776
+               Q 296 776 296 752 Z"
+            fill="url(#holoGrad)"/>
+      <path d="M 296 752
+               L 296 312
+               Q 296 280 326 280
+               L 384 280
+               Q 412 280 422 308
+               L 510 552
+               L 598 308
+               Q 608 280 636 280
+               L 694 280
+               Q 724 280 724 312
+               L 724 540
+               L 296 540 Z"
+            fill="url(#glassGrad)"/>
+    </g>
+    <g transform="translate(770 280)" filter="url(#softGlow)">
+      <circle cx="0" cy="0" r="116" fill="#ffffff" opacity="0.08"/>
+      <circle cx="0" cy="0" r="116" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+      <g stroke="url(#xGrad)" stroke-width="32" stroke-linecap="round">
+        <line x1="-58" y1="-58" x2="58" y2="58"/>
+        <line x1="58" y1="-58" x2="-58" y2="58"/>
+      </g>
+      <circle cx="0" cy="0" r="9" fill="#fff7d6"/>
+    </g>
+  </g>
+</svg>
