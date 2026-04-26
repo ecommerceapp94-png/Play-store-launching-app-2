@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Play-store-launching-app-2",
-    "slug": "Play-store-launching-app-2",
+    "name": "MeetX Ultra Pro",
+    "slug": "meetx-ultra-pro",
+    "scheme": "meetx",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,7 +11,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0E0826"
     },
     "ios": {
       "supportsTablet": true
@@ -18,10 +19,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#1A1140"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.meetx.ultrapro"
     },
     "web": {
       "favicon": "./assets/favicon.png"

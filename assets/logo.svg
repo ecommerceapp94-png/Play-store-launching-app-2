@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- Deep cosmic background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#5B6CFF"/>
+      <stop offset="50%" stop-color="#3B2EA8"/>
+      <stop offset="100%" stop-color="#0E0826"/>
+    </radialGradient>
+
+    <!-- Primary holo gradient for the M shape -->
+    <linearGradient id="holoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7AF6FF"/>
+      <stop offset="35%" stop-color="#7B8CFF"/>
+      <stop offset="70%" stop-color="#C76BFF"/>
+      <stop offset="100%" stop-color="#FF6BB5"/>
+    </linearGradient>
+
+    <!-- X cross gradient -->
+    <linearGradient id="xGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFEBA8"/>
+      <stop offset="55%" stop-color="#FFB36B"/>
+      <stop offset="100%" stop-color="#FF5E9E"/>
+    </linearGradient>
+
+    <!-- Accent ring gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7AF6FF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#C76BFF" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <!-- Glass highlight -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft outer glow -->
+    <radialGradient id="bloom" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square body -->
+  <rect x="0" y="0" width="1024" height="1024" rx="232" ry="232" fill="url(#bgGrad)"/>
+
+  <!-- Subtle inner bloom -->
+  <rect x="0" y="0" width="1024" height="1024" rx="232" ry="232" fill="url(#bloom)"/>
+
+  <!-- Concentric orbital rings (premium depth) -->
+  <g opacity="0.28" stroke="#9DB1FF" fill="none" stroke-linecap="round">
+    <circle cx="512" cy="512" r="430" stroke-width="2"/>
+    <circle cx="512" cy="512" r="360" stroke-width="1.4" stroke-dasharray="4 8"/>
+    <circle cx="512" cy="512" r="290" stroke-width="1.2" stroke-dasharray="2 10"/>
+  </g>
+
+  <!-- Outer accent arc -->
+  <g transform="translate(512 512)">
+    <circle r="408" fill="none" stroke="url(#ringGrad)" stroke-width="6" stroke-linecap="round"
+            stroke-dasharray="780 1820" transform="rotate(-25)"/>
+    <circle r="408" fill="none" stroke="url(#ringGrad)" stroke-width="3" stroke-linecap="round"
+            stroke-dasharray="120 2480" transform="rotate(125)"/>
+  </g>
+
+  <!-- Constellation dots -->
+  <g fill="#AEB8FF">
+    <circle cx="206" cy="248" r="4" opacity="0.9"/>
+    <circle cx="158" cy="370" r="3" opacity="0.6"/>
+    <circle cx="248" cy="190" r="2.2" opacity="0.8"/>
+    <circle cx="816" cy="270" r="3.4" opacity="0.7"/>
+    <circle cx="868" cy="380" r="4" opacity="0.9"/>
+    <circle cx="780" cy="180" r="2.6" opacity="0.6"/>
+    <circle cx="180" cy="780" r="3.2" opacity="0.7"/>
+    <circle cx="240" cy="858" r="2.4" opacity="0.5"/>
+    <circle cx="836" cy="800" r="3.6" opacity="0.8"/>
+    <circle cx="780" cy="868" r="2.6" opacity="0.6"/>
+  </g>
+
+  <!-- Stylised M (made of two slanted columns + central peak) -->
+  <!-- Left column -->
+  <g filter="url(#softGlow)">
+    <path d="M 296 752
+             L 296 312
+             Q 296 280 326 280
+             L 384 280
+             Q 412 280 422 308
+             L 510 552
+             L 598 308
+             Q 608 280 636 280
+             L 694 280
+             Q 724 280 724 312
+             L 724 752
+             Q 724 776 700 776
+             L 660 776
+             Q 636 776 636 752
+             L 636 472
+             L 562 668
+             Q 552 690 528 690
+             L 492 690
+             Q 468 690 458 668
+             L 384 472
+             L 384 752
+             Q 384 776 360 776
+             L 320 776
+             Q 296 776 296 752 Z"
+          fill="url(#holoGrad)"/>
+    <!-- Glass sheen overlay on top half of the M -->
+    <path d="M 296 752
+             L 296 312
+             Q 296 280 326 280
+             L 384 280
+             Q 412 280 422 308
+             L 510 552
+             L 598 308
+             Q 608 280 636 280
+             L 694 280
+             Q 724 280 724 312
+             L 724 540
+             L 296 540 Z"
+          fill="url(#glassGrad)"/>
+  </g>
+
+  <!-- The X — bold cross sitting top-right, signifying multiplication / connection -->
+  <g transform="translate(770 280)" filter="url(#softGlow)">
+    <!-- circle backplate -->
+    <circle cx="0" cy="0" r="116" fill="#ffffff" opacity="0.08"/>
+    <circle cx="0" cy="0" r="116" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <!-- X shape: two thick bars -->
+    <g stroke="url(#xGrad)" stroke-width="32" stroke-linecap="round">
+      <line x1="-58" y1="-58" x2="58" y2="58"/>
+      <line x1="58" y1="-58" x2="-58" y2="58"/>
+    </g>
+    <!-- inner gem -->
+    <circle cx="0" cy="0" r="9" fill="#fff7d6"/>
+  </g>
+
+  <!-- Bottom premium underscore + "ULTRA PRO" tick marks (subtle, scale-friendly) -->
+  <g transform="translate(512 832)">
+    <rect x="-160" y="-6" width="320" height="12" rx="6" fill="url(#holoGrad)" opacity="0.85"/>
+    <g fill="#FFE2A8">
+      <circle cx="-188" cy="0" r="6"/>
+      <circle cx="188" cy="0" r="6"/>
+    </g>
+  </g>
+</svg>
